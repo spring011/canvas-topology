@@ -9,7 +9,6 @@
 <script setup lang="ts">
 import Topology from './topology.vue';
 
-
 </script>
 
 <style lang="scss" scoped>
