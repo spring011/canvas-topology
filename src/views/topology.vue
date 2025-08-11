@@ -320,8 +320,38 @@ function loadImage(ctx: CanvasRenderingContext2D, imageInfo: imgList) {
         info.y = 1;
       }
 
-      ctx.moveTo(0, 0);
-      ctx.lineTo(imageInfo.x, imageInfo.y + (info.y * imgWidth) / 2);
+      // const angle = 45; // 直线与x轴夹角
+      const x1 = 0, y1 = 0; // 直线起点
+      const x2 = imageInfo.x, y2 = imageInfo.y + (info.y * imgWidth) / 2; // 直线终点
+      // 计算箭头坐标并绘制
+      // const Lpoint = {x: x1 + r * Math.cos(angle + theta), y: y1 + r * Math.sin(angle + theta)};
+      // const Rpoint = {x: x1 + r * Math.cos(angle - theta), y: y1 + r * Math.sin(angle - theta)};
+      ctx.moveTo(x1,y1);
+      ctx.lineTo(x2,y2);
+      ctx.stroke();
+
+      // 计算箭头的方向
+      const angle = Math.atan2(y2 - y1, x2 - x1);
+ 
+      // 计算两个端点，用于构成箭头的两个边
+      const h = 6 / Math.cos(Math.PI / 6);  // 考虑到三角形的边长和角度
+      const angle1 = (angle + Math.PI / 6); // 60度角的一边
+      const angle2 = (angle - Math.PI / 6); // 60度角的另一边
+      const topX = x2 - Math.cos(angle1) * h;
+      const topY = y2 - Math.sin(angle1) * h;
+      const botX = x2 - Math.cos(angle2) * h;
+      const botY = y2 - Math.sin(angle2) * h;
+  
+      // 开始一个新的路径以绘制箭头头
+      ctx.beginPath();
+  
+      // 移动到箭头的起点（即线段的终点）
+      ctx.moveTo(x2, y2);
+  
+      // 绘制箭头头部的两个边
+      ctx.lineTo(topX, topY);
+      ctx.moveTo(x2, y2);
+      ctx.lineTo(botX, botY);
       ctx.stroke();
     }
     ctx.restore();
