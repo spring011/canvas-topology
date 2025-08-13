@@ -385,7 +385,7 @@ onMounted(() => {
   setTimeout(() => {
     initZrender();
     initCanvas();
-  })
+  },1000)
 });
 onUnmounted(() => {
   window.removeEventListener('resize', resize);
