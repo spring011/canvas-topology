@@ -196,6 +196,8 @@ function drawToolTip(text:string, x:number, y:number) {
 }
 let zr: any;
 function initZrender() {
+  console.log('=========document.getElementById(canvas1))========')
+  console.log(document.getElementById('canvas1'))
   zr = zrender.init(document.getElementById('canvas1'));
   const _w = 375;
   const _h = 318;
