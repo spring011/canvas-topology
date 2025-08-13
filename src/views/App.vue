@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
-    <div class="item1">
+    <!-- <div class="item1">
       <Topology></Topology>
-    </div>
+    </div> -->
     <div class="item2">
       <AnimationTopology></AnimationTopology>
     </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import Topology from './topology.vue';
+// import Topology from './topology.vue';
 import AnimationTopology from './animation-topology.vue';
 
 </script>
