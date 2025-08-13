@@ -369,8 +369,7 @@ onUnmounted(() => {
   .canvas {
     position: relative;
     z-index: 100;
-    width: 80%;
-    height: calc(100% - 20px);
+    height: 70%;
     margin: 0 auto;
     .tooltip-wrapper {
       position: absolute;
