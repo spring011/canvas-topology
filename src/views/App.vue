@@ -1,11 +1,10 @@
 <template>
   <div class="wrapper">
     <div class="item1">
-      的回答胡
-      <!-- <Topology></Topology> -->
+      <Topology></Topology>
     </div>
     <div class="item2">
-      <!-- <AnimationTopology></AnimationTopology> -->
+      <AnimationTopology></AnimationTopology>
     </div>
   </div>
  
@@ -13,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
-// import Topology from './topology.vue';
-// import AnimationTopology from './animation-topology.vue';
+import Topology from './topology.vue';
+import AnimationTopology from './animation-topology.vue';
 
 </script>
 
