@@ -350,7 +350,7 @@ function drawLine(state: boolean, x1: number, y1: number, x2: number, y2: number
 
 function draw(ctx: CanvasRenderingContext2D) {
  console.log(ctx);
-  initZrender();
+  
   imgList.forEach((imageInfo: any) => {
     const info = { x: 0, y: 0 };
     if (imageInfo.x > 0) {
@@ -382,7 +382,10 @@ function draw(ctx: CanvasRenderingContext2D) {
 }
 
 onMounted(() => {
-  initCanvas();
+  setTimeout(() => {
+    initZrender();
+    initCanvas();
+  })
 });
 onUnmounted(() => {
   window.removeEventListener('resize', resize);
