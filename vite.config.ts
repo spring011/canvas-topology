@@ -28,6 +28,7 @@ export default ({ command, mode }) => {
       emptyOutDir: true,
       chunkSizeWarningLimit: 2000,
       reportCompressedSize: false,
+      sourcemap: true,
       // rollupOptions: {
       //   output: {
       //     manualChunks: {
